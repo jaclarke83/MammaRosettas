@@ -1,0 +1,42 @@
+version 1.3
+- Added premade colorschemes to customizer
+	* style.css
+	* functions.php
+	js/theme-customizer.js
+
+version 1.2 ( updated 05-02-2013 )
+- Fixed the thumbnail URL in the featured slider
+- Fixed post/page editor word count issue
+- Added readme file
+- Fixed posts notification messages in WP-Admin
+- Fixed the issue with slider height
+- Integrated Google Fonts options into Customizer
+
+List of modified files:
+epanel/custom_functions.php
+epanel/google-fonts/et_google_fonts.css
+epanel/google-fonts/et_google_fonts.js
+epanel/google-fonts/images/all-fonts.png
+epanel/options_foxy.php
+functions.php
+includes/featured.php
+lang/de_DE.mo
+lang/de_DE.po
+lang/en_US.mo
+lang/en_US.po
+lang/ru_RU.mo
+lang/ru_RU.po
+readme.url
+style.css
+
+version 1.1 ( updated 04-16-2013 )
+- Improved homepage performance
+	* style.css
+- Added improvement: Slider progress bar now stops on hover
+	* js/custom.js
+- Bumped version number
+	* style.css
+
+version 1.0
+
+- initial release
