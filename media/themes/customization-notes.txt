@@ -1,0 +1,30 @@
+The Source
+
+//home.php//
+Line 47-50
+		<div id="recent-posts" class="clearfix">
+			<h4 class="title"><?php esc_html_e('Recent Posts','TheSource'); ?></h4>
+			<?php get_template_part('includes/entry'); ?>
+		</div> <!-- end #recent-posts -->
+
+
+//functions.php//
+
+
+//recent-cat.php//
+Lines 1-7
+    <div class="top<?php if($last) echo(" last"); ?>">
+    <?php
+            $current_category = get_option( $cat_option );
+            $cat_option = is_numeric( $current_category ) ? get_cat_name( $current_category ) : $current_category;
+    ?>
+            <h4 class="title"><?php echo esc_html( $cat_option ); ?></h4>
+    </div>
+
+Line 17
+<p class="meta-info"><?php esc_html_e('Posted by','TheSource') ?> <?php the_author_posts_link(); ?> <?php esc_html_e('on','TheSource') ?> <?php the_time(get_option('thesource_date_format')) ?></p>
+
+Line 20
+<a href="<?php the_permalink(); ?>" class="readmore"><span><?php esc_html_e('Read More','TheSource'); ?></span></a>
+
+//style.css//

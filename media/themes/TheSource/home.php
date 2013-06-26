@@ -44,10 +44,10 @@
 
 <div id="main-content-wrap">
 	<div id="main-content" class="clearfix">
-		<div id="recent-posts" class="clearfix">
-			<h4 class="title"><?php esc_html_e('Recent Posts','TheSource'); ?></h4>
-			<?php get_template_part('includes/entry'); ?>
-		</div> <!-- end #recent-posts -->
+		
+		
+		
+		<!-- Removed #recent-posts -->
 		<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

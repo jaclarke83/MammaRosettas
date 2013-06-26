@@ -1,11 +1,4 @@
-<div class="top<?php if($last) echo(" last"); ?>">
-<?php
-	$current_category = get_option( $cat_option );
-	$cat_option = is_numeric( $current_category ) ? get_cat_name( $current_category ) : $current_category;
-?>
-	<h4 class="title"><?php echo esc_html( $cat_option ); ?></h4>
-</div>
-
+<!-- Removed "top" category block -->
 <?php $thumb = '';
 
 	$width = 239;
@@ -20,9 +13,12 @@
 
 <div class="entry <?php echo($headingColor); ?>"<?php if ($thumb == '') echo(' style="padding-top: 70px;"'); ?>>
 	<div class="title"<?php if ($thumb == '') echo(' style="top: 13px;"'); ?>>
-		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+	<?php $link = get_post_meta($post->ID, 'Link', true); ?>
+		<h3><a href="<?php if ($link <> '') { echo $link; } else { the_permalink(); } ?>"><?php the_title(); ?></a></h3>
 	</div>
-	<p class="meta-info"><?php esc_html_e('Posted by','TheSource') ?> <?php the_author_posts_link(); ?> <?php esc_html_e('on','TheSource') ?> <?php the_time(get_option('thesource_date_format')) ?></p>
+	<!-- Removed post meta -->
 	<p><?php truncate_post(182); ?></p>
-	<a href="<?php the_permalink(); ?>" class="readmore"><span><?php esc_html_e('Read More','TheSource'); ?></span></a>
+	<a class="readmore" href="<?php if ($link <> '') { echo $link; } else { the_permalink(); } ?>">
+	<?php $button = get_post_meta($post->ID, 'Button', true); ?>
+	<span><?php if ($button <> '') { echo $button; } else { esc_html_e('Read more','TheSource'); } ?></span></a>
 </div>
